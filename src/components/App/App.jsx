@@ -8,6 +8,8 @@ export function App() {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+  
+  const total = good + neutral + bad;
 
   const handleIncrementGood = () => {
     setGood(state => state + 1);
@@ -20,8 +22,6 @@ export function App() {
   const handleIncrementBad = () => {
     setBad(state => state + 1);
   };
-
-  const total = good + neutral + bad;
 
   const countPositiveFeedbackPercentage = () => {
     return total !== 0 ? Math.round((good / total) * 100) : 0;
